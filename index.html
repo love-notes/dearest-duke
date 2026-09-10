@@ -12,19 +12,20 @@
      EDIT ME: names + copy live in the JS at the bottom too.
      ============================================================ */
   :root{
-    --locker-blue:#7c93ac;
-    --locker-blue-dark:#5f7793;
-    --locker-blue-darker:#4a5f78;
-    --cork:#c9a876;
-    --cork-dark:#a9855c;
-    --paper:#faf5ec;
-    --paper-shadow:rgba(30,20,10,0.25);
-    --ink:#2e2a26;
-    --ink-soft:#5a5248;
-    --red:#b3202e;
-    --red-deep:#8f1522;
-    --gold:#e3b23c;
-    --sage:#4f7c55;
+    /* Dark emerald theme + warm gold accents */
+    --locker-blue:#0b3a2b;           /* background emerald (was locker-blue) */
+    --locker-blue-dark:#083426;      /* darker emerald */
+    --locker-blue-darker:#04261d;    /* darkest emerald */
+    --cork:#134d3b;                  /* panel emerald / moss */
+    --cork-dark:#0f3e2e;
+    --paper:#fafaf6;                 /* slightly warm paper */
+    --paper-shadow:rgba(0,0,0,0.28);
+    --ink:#07251f;                   /* very dark green ink */
+    --ink-soft:#4b7a63;
+    --red:#c9a84a;                   /* warm gold accent (kept var name for minimal changes) */
+    --red-deep:#946e25;              /* deeper gold accent */
+    --gold:#e3b23c;                  /* additional gold */
+    --sage:#6fa07b;
     --white:#fffdf9;
     --radius-card: 14px;
     --safe-top: env(safe-area-inset-top, 0px);
@@ -112,7 +113,7 @@
   }
   .progress span{
     width:6px;height:6px;border-radius:50%;
-    background:rgba(255,255,255,0.35);
+    background:rgba(255,255,255,0.25);
     transition:background .3s ease, transform .3s ease;
   }
   .progress span.done{ background:var(--gold); }
@@ -124,15 +125,15 @@
     width:min(720px, 94vw);
     max-width:100%;
     background:
-      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 40%),
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.04), transparent 40%),
       var(--cork);
     background-image:
-      radial-gradient(rgba(80,55,25,0.12) 1px, transparent 1.4px);
+      radial-gradient(rgba(24,45,30,0.08) 1px, transparent 1.4px);
     background-size: 8px 8px;
     background-color:var(--cork);
     border:10px solid #e8dcc4;
     border-radius:6px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.35), inset 0 0 0 2px rgba(160,120,70,0.4);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35), inset 0 0 0 2px rgba(10,30,20,0.25);
     padding:clamp(20px, 4vw, 40px);
     display:flex;
     flex-direction:column;
@@ -169,7 +170,7 @@
     position:absolute;
     top:-18px; right:22px;
     width:22px;height:44px;
-    border:4px solid #b9c0c6;
+    border:4px solid #9aa9a1;
     border-radius:12px;
     background:transparent;
     box-shadow:2px 2px 3px rgba(0,0,0,0.2);
@@ -203,7 +204,7 @@
   h1.headline, h2.headline{
     font-family:'Playfair Display',serif;
     font-style:italic;
-    color:var(--red);
+    color:var(--red); /* now warm gold */
     font-weight:700;
     line-height:1.15;
     margin:0 0 10px;
@@ -299,14 +300,14 @@
   }
   .btn-primary:active{ transform:translateY(4px); box-shadow:0 2px 0 var(--red-deep); }
   .btn-primary:disabled{
-    background:#b9a89c; box-shadow:0 6px 0 #93857b; cursor:not-allowed; opacity:0.6;
+    background:#8f8d82; box-shadow:0 6px 0 #6e6b5e; cursor:not-allowed; opacity:0.7;
   }
   .btn-ghost{
     background:transparent;
     color:var(--ink-soft);
     padding:13px 26px;
     border-radius:999px;
-    border:2px solid rgba(46,42,38,0.25);
+    border:2px solid rgba(46,42,38,0.12);
     min-height:44px;
   }
   .btn-ghost:hover{ border-color:var(--ink-soft); }
@@ -325,7 +326,7 @@
     font-size:clamp(13px,2.6vw,15px);
     font-weight:500;
     background:var(--white);
-    border:2px solid rgba(46,42,38,0.15);
+    border:2px solid rgba(46,42,38,0.12);
     border-radius:10px;
     padding:14px 12px;
     text-align:left;
@@ -409,7 +410,7 @@
   }
   .rule-card .tag{
     position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-2deg);
-    background:#efe6cf;
+    background:#eaf0e8;
     font-family:'Caveat',cursive;
     font-size:14px;
     padding:2px 10px;
@@ -431,7 +432,7 @@
     z-index:30;
     width:42px;height:42px;
     border-radius:50%;
-    background:rgba(255,253,249,0.9);
+    background:rgba(255,253,249,0.95);
     box-shadow:0 4px 10px rgba(0,0,0,0.25);
     display:flex;align-items:center;justify-content:center;
     font-size:18px;
@@ -478,7 +479,7 @@
     -webkit-overflow-scrolling:touch;
   }
   .letter-body::-webkit-scrollbar{ width:6px; }
-  .letter-body::-webkit-scrollbar-track{ background:rgba(46,42,38,0.08); border-radius:3px; }
+  .letter-body::-webkit-scrollbar-track{ background:rgba(46,42,38,0.06); border-radius:3px; }
   .letter-body::-webkit-scrollbar-thumb{ background:var(--red); border-radius:3px; }
   .letter-body .cursor{
     display:inline-block;
@@ -527,7 +528,7 @@
 
 <div class="locker-bg"></div>
 
-<audio id="bgMusic" src="hellnback.mp3" loop preload="auto"></audio>
+<audio id="bgMusic" src="pilihanku.mp3" loop preload="auto"></audio>
 <button class="music-toggle" id="musicToggle" aria-label="toggle music">🔇</button>
 
 <div class="progress" id="progressDots"></div>
@@ -541,7 +542,7 @@
         <svg viewBox="0 0 100 100"><polygon points="50,3 61,37 97,37 68,59 79,94 50,73 21,94 32,59 3,37 39,37" fill="#e3b23c"/></svg>
       </div>
       <div class="star deco-extra" style="bottom:-18px;right:-16px;transform:rotate(18deg);">
-        <svg viewBox="0 0 100 100"><polygon points="50,3 61,37 97,37 68,59 79,94 50,73 21,94 32,59 3,37 39,37" fill="#b3202e"/></svg>
+        <svg viewBox="0 0 100 100"><polygon points="50,3 61,37 97,37 68,59 79,94 50,73 21,94 32,59 3,37 39,37" fill="#0f3e2e"/></svg>
       </div>
       <div class="note">
         <div class="tape"></div>
@@ -595,7 +596,7 @@
   <section class="page" data-page="3">
     <div class="cork-panel">
       <p class="eyebrow">question 1 · multiple choice</p>
-      <h2 class="headline" style="font-size:clamp(20px,4vw,28px);">What'll genre I play when I was sad and have a mix feelings</h2>
+      <h2 class="headline" style="font-size:clamp(20px,4vw,28px);">What'll genre I play when I was sad and have a mix feelings?</h2>
       <div class="options" id="q1options"></div>
       <p class="feedback" id="q1feedback"></p>
       <div class="btn-row"><button class="btn-primary" id="q1next" disabled>next</button></div>
@@ -693,7 +694,7 @@
        na4.jpg  -> champion page photo (middle)
        na5.jpg  -> champion page photo (right)
    - Music expected in the SAME folder as this html file:
-       hellnback.mp3 -> background music, starts once user taps "yes!"
+       pilihanku.mp3 -> background music, starts once user taps "yes!"
          and can be muted/unmuted anytime with the button top-right
    ============================================================ */
 const RECIPIENT_NAME = "Duke";
@@ -761,7 +762,7 @@ document.getElementById('btnWait').addEventListener('click', (e)=>{
   const msgs = [
     "why... :(",
     "pfftt, you're so mean!",
-    "please tap the red one!!"
+    "please tap the gold one!!"
   ];
   waitMsg.textContent = msgs[Math.min(waitClicks-1, msgs.length-1)];
   waitMsg.classList.add('right-fb');
@@ -771,7 +772,7 @@ document.getElementById('btnWait').addEventListener('click', (e)=>{
 
 /* ---------------- HEART WORD BUILDER ---------------- */
 function heartSVG(){
-  return `<svg viewBox="0 0 100 90"><path d="M50 85 C20 62 2 44 2 24 C2 8 15 -2 30 4 C40 8 47 17 50 24 C53 17 60 8 70 4 C85 -2 98 8 98 24 C98 44 80 62 50 85 Z" fill="#fffdf9" stroke="#b3202e" stroke-width="7"/></svg>`;
+  return `<svg viewBox="0 0 100 90"><path d="M50 85 C20 62 2 44 2 24 C2 8 15 -2 30 4 C40 8 47 17 50 24 C53 17 60 8 70 4 C85 -2 98 8 98 24 C98 44 80 62 50 85 Z" fill="#fffdf9" stroke="#946e25" stroke-width="7"/></svg>`;
 }
 function buildHeartWord(containerId, word, delayStep=90){
   const el = document.getElementById(containerId);
